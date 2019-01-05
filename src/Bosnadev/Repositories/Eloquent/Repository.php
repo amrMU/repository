@@ -180,6 +180,17 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
     }
 
     /**
+     *  @param None
+     *  @param array $colmns
+     *  @return mixed
+     **/
+    public function findByFirst($colmns = []){
+        $this->applyCriteria();
+        return $this->model->first($colmns);
+    }
+
+
+    /**
      * @param $attribute
      * @param $value
      * @param array $columns
